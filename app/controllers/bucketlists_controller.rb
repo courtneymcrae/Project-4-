@@ -32,7 +32,7 @@ def index
     end
     
     def update 
-    @bucketlist = Bucketlist.find(params[:id])
+        @bucketlist = Bucketlist.find(params[:id])
     
         if @bucketlist.update_attributes(bucketlist_params)
         redirect_to bucketlist_path, notice: "Your to do has been created..."
@@ -44,6 +44,7 @@ def index
     
 
   def destroy 
+      @bucketlist = Bucketlist.find(params[:id])
       @bucketlist.destroy 
       redirect_to bucketlists_path
     end
