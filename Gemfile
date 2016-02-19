@@ -15,6 +15,15 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 
 gem 'devise'
+gem 'paperclip'
+gem 'jquery-ui-rails'
+gem 'bootstrap-datepicker-rails'
+
+ruby '2.2.1'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'byebug'

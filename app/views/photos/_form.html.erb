@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+<div class="panel-body">
+    <div class="container">
+
+        <%= form_for [@bucketlist, @photo], html: {multipart: true} do |f| %>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>To Do</label>
+                    <%= f.file_field :image %>
+                </div>
+            </div>
+                    
+            <div class="actions">
+                <%= f.submit "Save", class: "btn btn-primary center-block" %>
+            </div>
+        
+
+        <% end %>
+        
+       </div>
+    </div>
+</div>

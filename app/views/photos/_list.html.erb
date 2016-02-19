@@ -1,0 +1,15 @@
+<% if @photos %>
+	<div class="row">
+	<% @photos.each do |photo| %>
+		<div class="panel panel-default">
+			<div class="panel-heading preview">
+			<%=image_tag photo.image.url %>
+		</div>
+			<%=link_to 'delete this photo', photos_path(photo), remote: true, method: :delete, data: {confrim: "Are you sure?"} %>
+			<% end %>
+			</div>
+			<% end %>
+
+
+
+	

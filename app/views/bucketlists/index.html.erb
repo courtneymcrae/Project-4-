@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-1"></div>    
+              
+<div class="col-md-10">
+<div class="panel panel-default">
+<div class="panel-heading text-center">
+<h3>Your Bucketlist<h3>
+</div>
+<div class="panel-body">
+
+
+<% @bucketlists.each do |bucketlist| %>
+	<div class="row">
+	<div class="col-md-6">
+        <% if bucketlist.photos[0] %>
+		  <%=image_tag bucketlist.photos[0].image.url(:medium) %>
+        <% end %>
+	</div>
+    
+<div class="col-md-6">
+<h4><%= bucketlist.to_do %></h4>
+<p><%=bucketlist.summary %></p>
+<class="btn btn-primary"><%= link_to "Add a photo", new_bucketlist_photo_path(bucketlist), class: "btn btn-primary"%>
+<br>
+<br>
+<class="btn btn-primary"><%= link_to "Edit your bucket list", edit_bucketlist_path(bucketlist), class: "btn btn-primary"%>
+<br>
+          </div>
+          
+             
+            
+          </div>
+          <br>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

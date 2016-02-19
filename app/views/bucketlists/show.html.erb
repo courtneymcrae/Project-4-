@@ -1,0 +1,5 @@
+<div class="col-md-4">
+<% if @bucketlist.photos.count > 0 %>
+    	<%= image_tag @bucketlist.photos.first.image.url(:medium), class: "img-responsive" %>
+    	<% end %>
+</div>

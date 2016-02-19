@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
  validates :fullname, presence: true, length: {maximum: 50}
+ 
+ has_many :bucketlists
 end

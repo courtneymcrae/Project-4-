@@ -1,0 +1,49 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+<div class="panel-body">
+    <div class="container">
+
+        <%= form_for @bucketlist, html: {multipart: true} do |f| %>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>To Do</label>
+                    <%= f.text_field :to_do, placeholder: "What do you want to do?", class: "form-control" %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Date</label>
+                    <br>
+                     
+    <%= form_for :date do |f| %>
+	<%= f.text_field :start_date, placeholder: 'mm/dd/yyyy', :type => 'date' %>
+	<%= f.text_field :end_date, placeholder: 'mm/dd/yyyy', :type => 'date' %>
+	<%= f.hidden_field :bucketlist_id, value: @bucketlist.id %>
+    	<hr>
+	<% end %>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                     <label>Summary</label>
+                        <%= f.text_area :summary, rows: 4, placeholder: "Tell about your plans...", class: "form-control" %>
+                     </div>
+                    </div>
+                   
+                   <br>
+                    
+            <div class="actions">
+                <%= f.submit "Save", class: "btn btn-primary center-block" %>
+            </div>
+        
+
+        <% end %>
+        
+       </div>
+    </div>
+</div>
